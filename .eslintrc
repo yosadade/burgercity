@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "rules": {
+    "dot-notation": "off",
+    "react/jsx-handler-names": "off"
+  }
+}
