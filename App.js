@@ -146,6 +146,7 @@ const HomeTab = () => {
           component={item.component}
           options={{
             tabBarLabel: item.label,
+            // eslint-disable-next-line react/display-name
             tabBarIcon: ({ focused }) => {
               const Icon = focused ? item.icon.active : item.icon.inactive
               const Size = index === 3 ? 28 : 22

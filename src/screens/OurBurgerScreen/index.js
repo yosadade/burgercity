@@ -1,32 +1,19 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import { StyleSheet, View, Dimensions, Text } from 'react-native'
+import Carousel from 'react-native-snap-carousel'
 
-import Header from '../../components/Header'
-import { FlatList } from 'react-native-gesture-handler'
-
-import CustomButton from '../../components/CustomButton'
+import Header from '../../components/global/Header'
+import OrderMethodContent from '../../components/scope/OurBurgerComponents/OrderMethodContent'
+import DeliveryAddressContent from '../../components/scope/OurBurgerComponents/DeliveryAddressContent'
 
 class OurBurgerScreen extends Component {
   constructor () {
     super()
     this.state = {
-      methods : [
-        {
-          name: 'In-Store',
-          isActive: true
-        },
-        {
-          name: 'Delivery',
-          isActive: false
-        },
-        {
-          name: 'Drive-Thru',
-          isActive: false
-        },
-      ]
+      slideActive: 0
     }
   }
+
   render () {
     return (
       <View style={styles['container']}>
@@ -37,113 +24,67 @@ class OurBurgerScreen extends Component {
   }
 
   renderHeader = () => {
-   return (
-     <Header withBack/>
-   )
+    const { slideActive } = this.state
+    const withBack = slideActive > 0
+    return (
+      <Header
+        withBack={withBack}
+        onPressLeftButton={() => this.content.snapToPrev()}
+      />
+    )
   }
 
   renderContent = () => {
-    return  (
-      <View style={styles['content']}>
-        {this.renderOrderMethod()}
-        {this.renderMethodList()}
-        {this.renderProceedButton()}
-      </View>
-    )
-  }
-
-  renderOrderMethod = () => {
+    const { height, width } = Dimensions.get('window')
     return (
-      <View style={styles['order-method']}>
-        <Text
-          style={[
-            styles['text'],
-            styles['text--3xl'],
-            styles['text-black'],
-            styles['text-bold']
-          ]}
-        >
-          Order Method
-        </Text>
-
-        <Text
-          style={[
-            styles['text'],
-            styles['text--l'],
-            styles['text-black'],
-            styles['text-semibold'],
-            { marginTop: 5 }
-          ]}
-        >
-          Please select your order method
-        </Text>
-      </View>
-    )
-  }
-
-  renderMethodList = () => {
-    const { methods } = this.state
-    return (
-      <FlatList 
-        data={methods}
-        keyExtractor={( item, index ) => item + index.toString()}
-        style={styles['order-method__list']}
-        renderItem={({ item, index }) => {
-          const checkColor = item.isActive ? '#FF9F1C' : '#E3E5E8'
-          return (
-            <TouchableOpacity
-              onPress={() => this.onPressMethod(index)}
-              style={{ marginTop: 20}}
-            >
-              <View style={styles['order-method__button']}>
-                <Text
-                  style={[
-                    styles['text'],
-                    styles['text--large'],
-                    styles['text--semibold'],
-                    styles['text--black']
-                  ]}
-                >
-                  {item.name}
-                </Text>
-    
-                <MaterialCommunityIcons 
-                  name='check-circle'
-                  color={checkColor}
-                  size={16}
-                />
-              </View>
-            </TouchableOpacity>
-          )
-        }}
+      // <OrderMethodComponent />
+      <Carousel
+        ref={ ref => { this.content = ref }}
+        data={[0, 1, 2]}
+        renderItem={this.renderSection}
+        sliderHeight={height}
+        sliderWidth={width}
+        itemHeight={height}
+        itemWidth={width}
+        inactiveSlideScale={1}
+        scrollEnabled={false}
+        onSnapToItem={this.onSnap}
       />
     )
   }
 
-  onPressMethod = (index) => {
-    const { methods } = this.state
-    const newMethods = []
-
-    methods.map((item, i) => {
-      newMethods.push(item)
-
-      if ( index === i ) {
-        newMethods[index].isActive = true
-      } else {
-        newMethods[i].isActive = false
-      }
-    })
-    this.setState({ methods: newMethods})
+  onSnap = (slideActive) => {
+    this.setState({ slideActive })
   }
 
-  renderProceedButton = () => {
-    return (
-      <CustomButton 
-        titleButton='Proceed to Order'
-        buttonStyle={styles['proceed__button']}
-        onPress={() => {}}
-      />
-    )
+  renderSection = ({ item, index }) => {
+    switch (index) {
+      case 0:
+        return (
+          <OrderMethodContent
+            onProceed = {() => this.content.snapToNext()}
+          />
+        )
+      case 1:
+        return (
+          <DeliveryAddressContent
+            onProceed={() => this.content.snapToNext()}
+          />
+        )
+      case 2 :
+        return (
+          <View
+            style={{
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+            <Text> dua </Text>
+          </View>
+        )
+      default :
+        return <OrderMethodContent />
+    }
   }
 }
 
@@ -180,7 +121,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    includeFontPadding: false,
+    includeFontPadding: false
   },
   'text--black': {
     color: '#1D2126'

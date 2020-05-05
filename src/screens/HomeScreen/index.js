@@ -3,7 +3,7 @@ import {
   Text,
   View,
   StatusBar,
-  TouchableOpacity,
+  // TouchableOpacity,
   Image,
   StyleSheet,
   Dimensions,
@@ -23,7 +23,7 @@ import offer2 from '../../assets/images/image-2.png'
 import offer3 from '../../assets/images/image-15.png'
 import StarRating from 'react-native-star-rating'
 
-import Header from '../../components/Header'
+import Header from '../../components/global/Header'
 
 class HomeScreen extends Component {
   constructor (props) {
@@ -198,7 +198,7 @@ class HomeScreen extends Component {
             $12
           </Text>
         </View>
-        <StarRating 
+        <StarRating
           disabled
           maxStars={5}
           rating={3}
@@ -337,7 +337,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Nunito-Reguler',
     fontSize: 14,
     color: '#1d2126',
-    includeFontPadding: false,
+    includeFontPadding: false
   },
   'home__best-offer__price': {
     fontFamily: 'Nunito-Bold',

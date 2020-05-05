@@ -15,8 +15,8 @@ import fontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 import bgImage from '../../assets/images/background-image.png'
 import bcLogo from '../../assets/icons/burger-city-logo.png'
-import InputBox from '../../components/InputBox'
-import CustomButton from '../../components/CustomButton'
+import InputBox from '../../components/global/InputBox'
+import CustomButton from '../../components//global/CustomButton'
 
 class ForgotPasswordScreen extends Component {
   constructor (props) {

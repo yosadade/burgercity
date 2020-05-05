@@ -2,36 +2,39 @@ import React from 'react'
 import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Feather from 'react-native-vector-icons/Feather'
-import logo from '../../assets/icons/logo.png'
+import logo from '../../../assets/icons/logo.png'
 import PropTypes from 'prop-types'
 
 const Header = (props) => {
-    return (
-      <View style={styles['header']}>
-        <LeftButton withBack={props.withBack} />
+  return (
+    <View style={styles['header']}>
+      <LeftButton
+        withBack={props.withBack}
+        onPressLeftButton={props.onPressLeftButton}
+      />
 
-        <View style={styles['logo']}>
-          <Image
-            source={logo}
-            resizeMode='contain'
-          />
-        </View>
-
-        <TouchableOpacity
-          onPress={() => {}}
-          style={styles['btn']}
-        >
-          <FontAwesome
-            name='shopping-cart'
-            color='#ff9f1c'
-            size={20}
-          />
-        </TouchableOpacity>
+      <View style={styles['logo']}>
+        <Image
+          source={logo}
+          resizeMode='contain'
+        />
       </View>
-    )
+
+      <TouchableOpacity
+        onPress={() => {}}
+        style={styles['btn']}
+      >
+        <FontAwesome
+          name='shopping-cart'
+          color='#ff9f1c'
+          size={20}
+        />
+      </TouchableOpacity>
+    </View>
+  )
 }
 
-const LeftButton = ({ withBack }) => {
+const LeftButton = ({ withBack, onPressLeftButton }) => {
   let button = (
     <View style={styles['lang_btn']}>
       <Text style={styles['text']}>
@@ -45,20 +48,20 @@ const LeftButton = ({ withBack }) => {
       />
     </View>
   )
-  
+
   if (withBack) {
     button = (
-      <Feather 
+      <Feather
         name='chevron-left'
         color='#ff9f1c'
         size={28}
-        style={{ marginLeft: -5 }}
+        style={{ marginLeft: -5, marginVertical: -10 }}
       />
     )
   }
   return (
     <TouchableOpacity
-      onPress={() => {} }
+      onPress={onPressLeftButton}
       style={styles['btn']}
     >
       {button}
@@ -67,11 +70,13 @@ const LeftButton = ({ withBack }) => {
 }
 
 Header.propTypes = {
-  withBack: PropTypes.bool
+  withBack: PropTypes.bool,
+  onPressLeftButton: PropTypes.func
 }
 
 LeftButton.propTypes = {
-  withBack: PropTypes.bool
+  withBack: PropTypes.bool,
+  onPressLeftButton: PropTypes.func
 }
 
 export default Header
@@ -100,5 +105,5 @@ const styles = StyleSheet.create({
     bottom: 0,
     alignItems: 'center',
     justifyContent: 'center'
-  },
+  }
 })

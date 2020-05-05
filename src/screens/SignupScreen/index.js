@@ -14,8 +14,8 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons'
 
 import bgImage from '../../assets/images/background-image.png'
 import bcLogo from '../../assets/icons/burger-city-logo.png'
-import InputBox from '../../components/InputBox'
-import CustomButton from '../../components/CustomButton'
+import InputBox from '../../components/global/InputBox'
+import CustomButton from '../../components/global/CustomButton'
 
 class LoginScreen extends Component {
   constructor (props) {
