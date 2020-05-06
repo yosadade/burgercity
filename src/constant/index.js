@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native'
 
 export const BaseStyle = StyleSheet.create({
   text: {
-    includeFontPadding: false
+    includeFontPadding: false,
+    fontFamily: 'Nonito-Regular'
   },
   'text--white': {
     color: '#FFFFFF'

@@ -7,14 +7,14 @@ import {
   ImageBackground,
   StatusBar,
   Dimensions,
-  YellowBox,
-  TouchableHighlight
+  YellowBox
 } from 'react-native'
 import PropTypes from 'prop-types'
 
 import bgImage from '../../assets/images/background-image.png'
 import bcLogo from '../../assets/icons/burger-city-logo.png'
 import Carousel, { Pagination } from 'react-native-snap-carousel'
+import { StandardButton } from '../../components/global/CustomButton'
 
 class OnBoardingScreen extends Component {
   constructor () {
@@ -83,13 +83,11 @@ class OnBoardingScreen extends Component {
 
   renderStartButton = () => {
     return (
-      <TouchableHighlight
-        underlayColor="#ed941a"
+      <StandardButton
+        titleButton='Get Start here'
+        buttonStyle={styles['onboarding__button']}
         onPress={this.onStartHere}
-        style={styles.onboarding__button}
-      >
-        <Text style={styles.onboarding__button__title}>Get Start Here</Text>
-      </TouchableHighlight>
+      />
     )
   };
 
@@ -190,18 +188,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30
   },
   onboarding__button: {
-    backgroundColor: '#ff9f1c',
-    alignItems: 'center',
-    paddingVertical: 20,
-    borderRadius: 10,
     marginHorizontal: 30,
     marginTop: 'auto',
-    marginBottom: 70
-  },
-  onboarding__button__title: {
-    color: '#ffffff',
-    includeFontPadding: false,
-    fontSize: 16,
-    fontFamily: 'Nunito-SemiBold'
+    marginBottom: 50
   }
 })

@@ -19,7 +19,7 @@ import CheckBox from 'react-native-check-box'
 import bgImage from '../../assets/images/background-image.png'
 import bcLogo from '../../assets/icons/burger-city-logo.png'
 import InputBox from '../../components/global/InputBox'
-import CustomButton from '../../components/global/CustomButton'
+import { StandardButton } from '../../components/global/CustomButton'
 
 class LoginScreen extends Component {
   constructor (props) {
@@ -219,7 +219,7 @@ class LoginScreen extends Component {
     const { data } = this.state
     const disabled = !data.email || !data.password
     return (
-      <CustomButton
+      <StandardButton
         titleButton='Log in'
         disabled={disabled}
         buttonStyle={{

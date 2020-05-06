@@ -15,8 +15,9 @@ import fontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 
 import bgImage from '../../assets/images/background-image.png'
 import bcLogo from '../../assets/icons/burger-city-logo.png'
+
 import InputBox from '../../components/global/InputBox'
-import CustomButton from '../../components//global/CustomButton'
+import { StandardButton } from '../../components/global/CustomButton'
 
 class ForgotPasswordScreen extends Component {
   constructor (props) {
@@ -212,10 +213,11 @@ class ForgotPasswordScreen extends Component {
         : ''
 
     return (
-      <CustomButton
+      <StandardButton
         disabled={disabled}
         titleButton={titleButton}
         onPress={this.onSubmit}
+        buttonStyle={{ marginTop: 50 }}
       />
     )
   };

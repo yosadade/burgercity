@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
 import { BaseStyle } from '../../../../constant'
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
-import CustomButton from '../../../global/CustomButton'
+import { StandardButton, IconButton } from '../../../global/CustomButton'
 
 class DeiveryAddressContent extends Component {
   constructor () {
@@ -162,26 +162,21 @@ class DeiveryAddressContent extends Component {
             Delivery Address
         </Text>
 
-        <TouchableOpacity
-          onPress={() => {}}
-        >
-          <View style={styles['edit__button']}>
-            <Text
-              style={[
-                BaseStyle['text'],
-                BaseStyle['text--large'],
-                BaseStyle['text--black']
-              ]}
-            >
-                    No. 02, 6th Lane, Colombo 03
-            </Text>
+        <IconButton
+          titleButton=' No. 02, 6th Lane, Colombo 03'
+          IconButton={
             <EvilIcons
               name='pencil'
-              size={18}
+              size={20}
               color='#FF9F1C'
             />
-          </View>
-        </TouchableOpacity>
+          }
+          buttonStyle={{
+            paddingRight: 15,
+            marginTop: 18
+          }}
+        />
+
       </View>
     )
   }
@@ -210,27 +205,21 @@ class DeiveryAddressContent extends Component {
                   Please select delivery date & time
         </Text>
 
-        <TouchableOpacity
-          onPress={() => {}}
-        >
-          <View style={styles['edit__button']}>
-            <Text
-              style={[
-                BaseStyle['text'],
-                BaseStyle['text--large'],
-                BaseStyle['text--black']
-              ]}
-            >
-                        Delivery Date & Time
-            </Text>
-
+        <IconButton
+          titleButton=' Delivery Date & Time'
+          IconButton={
             <EvilIcons
               name='pencil'
-              size={18}
+              size={20}
               color='#FF9F1C'
             />
-          </View>
-        </TouchableOpacity>
+          }
+          buttonStyle={{
+            paddingRight: 15,
+            marginTop: 18
+          }}
+        />
+
       </View>
     )
   }
@@ -238,7 +227,7 @@ class DeiveryAddressContent extends Component {
   renderProceedButton = () => {
     const { onProceed } = this.props
     return (
-      <CustomButton
+      <StandardButton
         titleButton='Proceed to order'
         onPress={onProceed}
         buttonStyle={styles['proceed-order__button']}

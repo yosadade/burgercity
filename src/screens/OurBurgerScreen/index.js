@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Dimensions, Text } from 'react-native'
+import { StyleSheet, View, Dimensions } from 'react-native'
 import Carousel from 'react-native-snap-carousel'
 
 import Header from '../../components/global/Header'
 import OrderMethodContent from '../../components/scope/OurBurgerComponents/OrderMethodContent'
 import DeliveryAddressContent from '../../components/scope/OurBurgerComponents/DeliveryAddressContent'
+import PickupDateTimeContent from '../../components/scope/OurBurgerComponents/PickupDateTimeContent'
 
 class OurBurgerScreen extends Component {
   constructor () {
@@ -73,14 +74,7 @@ class OurBurgerScreen extends Component {
         )
       case 2 :
         return (
-          <View
-            style={{
-              flex: 1,
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-            <Text> dua </Text>
-          </View>
+          <PickupDateTimeContent />
         )
       default :
         return <OrderMethodContent />

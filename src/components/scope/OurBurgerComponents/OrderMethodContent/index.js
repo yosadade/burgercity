@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View, FlatList, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, FlatList } from 'react-native'
+import PropTypes from 'prop-types'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import CustomButton from '../../../global/CustomButton'
+
 import { BaseStyle } from '../../../../constant'
+import { StandardButton, IconButton } from '../../../global/CustomButton'
 
 class OrderMethodComponent extends Component {
   constructor () {
@@ -74,29 +76,19 @@ class OrderMethodComponent extends Component {
           renderItem={({ item, index }) => {
             const checkColor = item.isActive ? '#FF9F1C' : '#E3E5E8'
             return (
-              <TouchableOpacity
-                onPress={() => this.onPressMethod(index)}
-                style={{ marginTop: 20 }}
-              >
-                <View style={styles['order-method__button']}>
-                  <Text
-                    style={[
-                      BaseStyle['text'],
-                      BaseStyle['text--large'],
-                      BaseStyle['text--semibold'],
-                      BaseStyle['text--black']
-                    ]}
-                  >
-                    {item.name}
-                  </Text>
-
+              <IconButton
+                titleButton={item.name}
+                IconButton={
                   <MaterialCommunityIcons
                     name='check-circle'
                     color={checkColor}
-                    size={16}
+                    size={18}
                   />
-                </View>
-              </TouchableOpacity>
+                }
+                buttonStyle={{ marginTop: 20 }}
+                onPress={() => this.onPressMethod(index)}
+              />
+           
             )
           }}
         />
@@ -122,13 +114,17 @@ class OrderMethodComponent extends Component {
     renderProceedButton = () => {
       const { onProceed } = this.props
       return (
-        <CustomButton
+        <StandardButton
           titleButton='Proceed to Order'
           buttonStyle={styles['proceed__button']}
           onPress={onProceed}
         />
       )
     }
+}
+
+OrderMethodComponent.propTypes = {
+  onProceed: PropTypes.func
 }
 
 export default OrderMethodComponent
