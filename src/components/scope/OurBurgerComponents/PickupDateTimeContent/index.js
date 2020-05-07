@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import {
   Text,
   StyleSheet,
@@ -17,7 +18,8 @@ class PickupDateTimeContent extends Component {
       <View style={styles['container']}>
         {this.renderEditDate()}
         {this.renderEditTime()}
-        {this.renderProceedButton()}
+        {this.renderNote()}
+        {this.renderSelectButton()}
       </View>
     )
   }
@@ -139,15 +141,37 @@ class PickupDateTimeContent extends Component {
     )
   }
 
-  renderProceedButton = () => {
+  renderNote = () => {
+    return (
+      <View
+        style={[
+          BaseStyle['text'],
+          BaseStyle['text--large'],
+          BaseStyle['text--black'],
+          { marginTop: 30 }
+        ]}
+      >
+        <Text>
+        Minimum of 90 Minutes before Pickup time
+        </Text>
+      </View>
+    )
+  }
+
+  renderSelectButton = () => {
+    const { onProceed } = this.props
     return (
       <StandardButton
-        titleButton='Proceed to Order'
-        // onPress={onProceed}
+        titleButton='Select'
+        onPress={onProceed}
         buttonStyle={styles['proceed-order__button']}
       />
     )
   }
+}
+
+PickupDateTimeContent.propTypes = {
+  onProceed: PropTypes.func
 }
 
 export default PickupDateTimeContent

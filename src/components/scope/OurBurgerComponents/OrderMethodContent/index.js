@@ -88,7 +88,6 @@ class OrderMethodComponent extends Component {
                 buttonStyle={{ marginTop: 20 }}
                 onPress={() => this.onPressMethod(index)}
               />
-           
             )
           }}
         />

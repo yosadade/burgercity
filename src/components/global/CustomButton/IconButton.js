@@ -6,7 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { BaseStyle } from '../../../constant'
 
 const IconButton = (props) => {
-  const { onPress, titleButton, IconButton, buttonStyle } = props
+  const { onPress, titleButton, IconButton, buttonStyle, subtitleButton, avatarButton } = props
   const wrapperStyle = buttonStyle
     ? [styles['button'], buttonStyle]
     : styles['button']
@@ -15,31 +15,111 @@ const IconButton = (props) => {
       onPress={onPress}
     >
       <View style={wrapperStyle}>
-        <Text
-          style={[
-            BaseStyle['text'],
-            BaseStyle['text--large'],
-            BaseStyle['text--semibold'],
-            BaseStyle['text--black']
-          ]}
-        >
-          {titleButton}
-        </Text>
-
-        {IconButton}
+        <LeftSection
+          avatarButton={avatarButton}
+        />
+        <MiddleSection
+          titleButton={titleButton}
+          subtitleButton={subtitleButton}
+        />
+        <RightSection
+          IconButton={IconButton}
+        />
       </View>
     </TouchableOpacity>
   )
 }
 
+const LeftSection = ({ avatarButton }) => {
+  return (
+    <View style={styles['section--left']}>
+      {avatarButton}
+    </View>
+  )
+}
+
+const MiddleSection = ({ titleButton, subtitleButton }) => {
+  return (
+    <View style={{ marginLeft: 20 }}>
+      <Title titleButton={titleButton}/>
+      <Subtitle subtitleButton={subtitleButton}/>
+    </View>
+  )
+}
+
+const Title = ({ titleButton }) => {
+  return (
+    <Text
+      style={[
+        BaseStyle['text'],
+        BaseStyle['text--large'],
+        BaseStyle['text--semibold'],
+        BaseStyle['text--black']
+      ]}
+    >
+      {titleButton}
+    </Text>
+  )
+}
+
+const Subtitle = ({ subtitleButton }) => {
+  if (subtitleButton) {
+    return (
+      <Text
+        style={[
+          BaseStyle['text'],
+          BaseStyle['text--medium'],
+          BaseStyle['text--semibold'],
+          BaseStyle['text--orange'],
+          { marginTop: 3 }
+        ]}
+      >
+        {subtitleButton}
+      </Text>
+    )
+  }
+  return null
+}
+
+const RightSection = ({ IconButton }) => {
+  return (
+    <View style={{ marginLeft: 'auto' }}>
+      {IconButton}
+    </View>
+  )
+}
+
 IconButton.propTypes = {
-  onPress: PropTypes.func,
+  avatarButton: PropTypes.object,
   titleButton: PropTypes.string,
+  subtitleButton: PropTypes.string,
   IconButton: PropTypes.element,
   buttonStyle: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array
-  ])
+  ]),
+  onPress: PropTypes.func
+}
+
+LeftSection.propTypes = {
+  avatarButton: PropTypes.object
+}
+
+MiddleSection.propTypes = {
+  titleButton: PropTypes.string,
+  subtitleButton: PropTypes.string
+}
+
+RightSection.propTypes = {
+  IconButton: PropTypes.element
+}
+
+Title.propTypes = {
+  titleButton: PropTypes.string
+}
+
+Subtitle.propTypes = {
+  subtitleButton: PropTypes.string
 }
 
 IconButton.defaultProps = {
@@ -62,9 +142,15 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
     backgroundColor: '#FFFFFF',
     paddingVertical: 15,
     paddingHorizontal: 20
+  },
+  'section--left': {
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
+    maxHeight: 60,
+    maxWidth: 60
   }
 })

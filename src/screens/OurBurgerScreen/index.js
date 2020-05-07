@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Dimensions } from 'react-native'
+import { StyleSheet, View, Dimensions, Text } from 'react-native'
 import Carousel from 'react-native-snap-carousel'
 
 import Header from '../../components/global/Header'
 import OrderMethodContent from '../../components/scope/OurBurgerComponents/OrderMethodContent'
 import DeliveryAddressContent from '../../components/scope/OurBurgerComponents/DeliveryAddressContent'
 import PickupDateTimeContent from '../../components/scope/OurBurgerComponents/PickupDateTimeContent'
+import MenuContent from '../../components/scope/OurBurgerComponents/MenuContent'
+import DishContent from '../../components/scope/OurBurgerComponents/DishContent'
 
 class OurBurgerScreen extends Component {
   constructor () {
@@ -41,7 +43,7 @@ class OurBurgerScreen extends Component {
       // <OrderMethodComponent />
       <Carousel
         ref={ ref => { this.content = ref }}
-        data={[0, 1, 2]}
+        data={[0, 1, 2, 3, 4]}
         renderItem={this.renderSection}
         sliderHeight={height}
         sliderWidth={width}
@@ -74,10 +76,28 @@ class OurBurgerScreen extends Component {
         )
       case 2 :
         return (
-          <PickupDateTimeContent />
+          <PickupDateTimeContent
+            onProceed={() => this.content.snapToNext()}
+          />
+        )
+      case 3 :
+        return (
+          <MenuContent
+            onProceed={() => this.content.snapToNext()}
+          />
+        )
+      case 4 :
+        return (
+          <DishContent
+            onProceed={() => this.content.snapToNext()}
+          />
         )
       default :
-        return <OrderMethodContent />
+        return (
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text> 404 Not Found </Text>
+          </View>
+        )
     }
   }
 }

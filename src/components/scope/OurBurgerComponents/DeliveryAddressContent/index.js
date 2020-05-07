@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
 import { BaseStyle } from '../../../../constant'
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import { StandardButton, IconButton } from '../../../global/CustomButton'
 
-class DeiveryAddressContent extends Component {
+class DeliveryAddressContent extends Component {
   constructor () {
     super()
     this.state = {
@@ -236,7 +237,11 @@ class DeiveryAddressContent extends Component {
   }
 }
 
-export default DeiveryAddressContent
+DeliveryAddressContent.propTypes = {
+  onProceed: PropTypes.func
+}
+
+export default DeliveryAddressContent
 
 const styles = StyleSheet.create({
   container: {
