@@ -6,22 +6,18 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { BaseStyle } from '../../../../constant'
 import { StandardButton, IconButton } from '../../../global/CustomButton'
 
-class OrderMethodComponent extends Component {
+class ChoicesDishContent extends Component {
   constructor () {
     super()
     this.state = {
-      methods: [
+      choices: [
         {
-          name: 'In-Store',
+          name: 'Homestyle Fries',
+          isActive: false
+        },
+        {
+          name: 'Medium',
           isActive: true
-        },
-        {
-          name: 'Delivery',
-          isActive: false
-        },
-        {
-          name: 'Drive-Thru',
-          isActive: false
         }
       ]
     }
@@ -44,11 +40,11 @@ class OrderMethodComponent extends Component {
             style={[
               BaseStyle['text'],
               BaseStyle['text--3xl'],
-              BaseStyle['text-black'],
-              BaseStyle['text-bold']
+              BaseStyle['text--black'],
+              BaseStyle['text--bold']
             ]}
           >
-              Order Method
+              Choices
           </Text>
 
           <Text
@@ -60,17 +56,17 @@ class OrderMethodComponent extends Component {
               { marginTop: 5 }
             ]}
           >
-              Please select your order method
+              Please select your Choices
           </Text>
         </View>
       )
     }
 
     renderMethodList = () => {
-      const { methods } = this.state
+      const { choices } = this.state
       return (
         <FlatList
-          data={methods}
+          data={choices}
           keyExtractor={(item, index) => item + index.toString()}
           style={styles['order-method__list']}
           renderItem={({ item, index }) => {
@@ -95,19 +91,19 @@ class OrderMethodComponent extends Component {
     }
 
     onPressMethod = (index) => {
-      const { methods } = this.state
-      const newMethods = []
+      const { choices } = this.state
+      const newchoices = []
 
-      methods.map((item, i) => {
-        newMethods.push(item)
+      choices.map((item, i) => {
+        newchoices.push(item)
 
         if (index === i) {
-          newMethods[index].isActive = true
+          newchoices[index].isActive = true
         } else {
-          newMethods[i].isActive = false
+          newchoices[i].isActive = false
         }
       })
-      this.setState({ methods: newMethods })
+      this.setState({ choices: newchoices })
     }
 
     renderProceedButton = () => {
@@ -122,11 +118,11 @@ class OrderMethodComponent extends Component {
     }
 }
 
-OrderMethodComponent.propTypes = {
+ChoicesDishContent.propTypes = {
   onProceed: PropTypes.func
 }
 
-export default OrderMethodComponent
+export default ChoicesDishContent
 
 const styles = StyleSheet.create({
   content: {

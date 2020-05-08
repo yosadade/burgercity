@@ -6,7 +6,16 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { BaseStyle } from '../../../constant'
 
 const IconButton = (props) => {
-  const { onPress, titleButton, IconButton, buttonStyle, subtitleButton, avatarButton } = props
+  const {
+    onPress,
+    titleButton,
+    iconRight,
+    buttonStyle,
+    subtitleButton,
+    avatarButton,
+    subtitleStyle,
+    subtitleRight
+  } = props
   const wrapperStyle = buttonStyle
     ? [styles['button'], buttonStyle]
     : styles['button']
@@ -21,9 +30,11 @@ const IconButton = (props) => {
         <MiddleSection
           titleButton={titleButton}
           subtitleButton={subtitleButton}
+          subtitleStyle={subtitleStyle}
         />
         <RightSection
-          IconButton={IconButton}
+          iconRight={iconRight}
+          subtitleRight={subtitleRight}
         />
       </View>
     </TouchableOpacity>
@@ -31,18 +42,20 @@ const IconButton = (props) => {
 }
 
 const LeftSection = ({ avatarButton }) => {
-  return (
-    <View style={styles['section--left']}>
-      {avatarButton}
-    </View>
-  )
+  if (avatarButton) {
+    return (
+      <View style={styles['section--left']}>
+        {avatarButton}
+      </View>
+    )
+  } return null
 }
 
-const MiddleSection = ({ titleButton, subtitleButton }) => {
+const MiddleSection = ({ titleButton, subtitleButton, subtitleStyle }) => {
   return (
-    <View style={{ marginLeft: 20 }}>
+    <View>
       <Title titleButton={titleButton}/>
-      <Subtitle subtitleButton={subtitleButton}/>
+      <Subtitle subtitleButton={subtitleButton} subtitleStyle={subtitleStyle} />
     </View>
   )
 }
@@ -62,7 +75,7 @@ const Title = ({ titleButton }) => {
   )
 }
 
-const Subtitle = ({ subtitleButton }) => {
+const Subtitle = ({ subtitleButton, subtitleStyle }) => {
   if (subtitleButton) {
     return (
       <Text
@@ -71,6 +84,7 @@ const Subtitle = ({ subtitleButton }) => {
           BaseStyle['text--medium'],
           BaseStyle['text--semibold'],
           BaseStyle['text--orange'],
+          subtitleStyle,
           { marginTop: 3 }
         ]}
       >
@@ -81,19 +95,32 @@ const Subtitle = ({ subtitleButton }) => {
   return null
 }
 
-const RightSection = ({ IconButton }) => {
+const RightSection = ({ iconRight, subtitleRight }) => {
   return (
-    <View style={{ marginLeft: 'auto' }}>
-      {IconButton}
+    <View style={styles['section--right']}>
+      <View>
+        <Text
+          style={[
+            BaseStyle['text'],
+            BaseStyle['text--medium'],
+            BaseStyle['text--orange'],
+            BaseStyle['text--bold'],
+            { marginRight: 10 }
+          ]}
+        > {subtitleRight} </Text>
+      </View>
+      {iconRight}
     </View>
   )
 }
 
 IconButton.propTypes = {
+  subtitleRight: PropTypes.string,
+  subtitleStyle: PropTypes.object,
   avatarButton: PropTypes.object,
   titleButton: PropTypes.string,
   subtitleButton: PropTypes.string,
-  IconButton: PropTypes.element,
+  iconRight: PropTypes.element,
   buttonStyle: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array
@@ -107,11 +134,13 @@ LeftSection.propTypes = {
 
 MiddleSection.propTypes = {
   titleButton: PropTypes.string,
-  subtitleButton: PropTypes.string
+  subtitleButton: PropTypes.string,
+  subtitleStyle: PropTypes.object
 }
 
 RightSection.propTypes = {
-  IconButton: PropTypes.element
+  iconRight: PropTypes.element,
+  subtitleRight: PropTypes.string
 }
 
 Title.propTypes = {
@@ -119,13 +148,14 @@ Title.propTypes = {
 }
 
 Subtitle.propTypes = {
-  subtitleButton: PropTypes.string
+  subtitleButton: PropTypes.string,
+  subtitleStyle: PropTypes.object
 }
 
 IconButton.defaultProps = {
   onPress: () => {},
   titleButton: 'Icon Button',
-  IconButton: (
+  iconRight: (
     <MaterialCommunityIcons
       name='xml'
       size={18}
@@ -151,6 +181,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     maxHeight: 60,
-    maxWidth: 60
+    maxWidth: 60,
+    marginRight: 20
+  },
+  'section--right': {
+    flexDirection: 'row',
+    marginLeft: 'auto'
   }
 })

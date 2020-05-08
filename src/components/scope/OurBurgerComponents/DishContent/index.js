@@ -88,7 +88,7 @@ class DishContent extends Component {
         titleButton={item.name}
         subtitleButton={`${item.price} LKR`}
         buttonStyle={{ marginTop: 15 }}
-        IconButton={
+        iconRight={
           <Ionicons
             name='ios-arrow-dropright-circle'
             size={20}

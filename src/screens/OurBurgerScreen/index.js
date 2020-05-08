@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Dimensions, Text } from 'react-native'
+import { StyleSheet, View, Dimensions, Text, StatusBar } from 'react-native'
 import Carousel from 'react-native-snap-carousel'
 
 import Header from '../../components/global/Header'
@@ -8,6 +8,8 @@ import DeliveryAddressContent from '../../components/scope/OurBurgerComponents/D
 import PickupDateTimeContent from '../../components/scope/OurBurgerComponents/PickupDateTimeContent'
 import MenuContent from '../../components/scope/OurBurgerComponents/MenuContent'
 import DishContent from '../../components/scope/OurBurgerComponents/DishContent'
+import SelectedDishContent from '../../components/scope/OurBurgerComponents/SelectedDishContent'
+import ChoicesDishContent from '../../components/scope/OurBurgerComponents/ChoicesDishContent'
 
 class OurBurgerScreen extends Component {
   constructor () {
@@ -20,9 +22,20 @@ class OurBurgerScreen extends Component {
   render () {
     return (
       <View style={styles['container']}>
+        {this.renderStatusBar()}
         {this.renderHeader()}
         {this.renderContent()}
       </View>
+    )
+  }
+
+  renderStatusBar = () => {
+    return (
+      <StatusBar
+        translucent
+        barStyle="dark-content"
+        backgroundColor="#FFFFFF"
+      />
     )
   }
 
@@ -43,7 +56,7 @@ class OurBurgerScreen extends Component {
       // <OrderMethodComponent />
       <Carousel
         ref={ ref => { this.content = ref }}
-        data={[0, 1, 2, 3, 4]}
+        data={[0, 1, 2, 3, 4, 5, 6]}
         renderItem={this.renderSection}
         sliderHeight={height}
         sliderWidth={width}
@@ -89,6 +102,18 @@ class OurBurgerScreen extends Component {
       case 4 :
         return (
           <DishContent
+            onProceed={() => this.content.snapToNext()}
+          />
+        )
+      case 5 :
+        return (
+          <SelectedDishContent
+            onProceed={() => this.content.snapToNext()}
+          />
+        )
+      case 6 :
+        return (
+          <ChoicesDishContent
             onProceed={() => this.content.snapToNext()}
           />
         )

@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 30,
+    marginTop: 20,
     backgroundColor: '#FFFFFF'
   },
   btn: {
