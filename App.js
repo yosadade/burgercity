@@ -7,6 +7,7 @@
  */
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { YellowBox } from 'react-native'
 import OnBoardingScreen from './src/screens/OnBoardingScreen'
 import LoginScreen from './src/screens/LoginScreen'
@@ -162,6 +163,10 @@ const HomeTab = () => {
       ))}
     </Tab.Navigator>
   )
+}
+
+HomeTab.propTypes = {
+  focused: PropTypes.object
 }
 
 export default App

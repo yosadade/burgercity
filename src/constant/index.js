@@ -5,6 +5,9 @@ export const BaseStyle = StyleSheet.create({
     includeFontPadding: false,
     fontFamily: 'Nonito-Regular'
   },
+  'text--grey': {
+    color: '#727C8E'
+  },
   'text--orange': {
     color: '#FF9F1C'
   },
