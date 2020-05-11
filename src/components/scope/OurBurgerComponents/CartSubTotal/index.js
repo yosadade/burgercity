@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, Image, TextInput, ScrollView } from 'react-native'
+import { Text, StyleSheet, View, TextInput, ScrollView } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { BaseStyle } from '../../../../constant'
 import { IconButton, StandardButton } from '../../../global/CustomButton'
 
-import menuMeals from '../../../../assets/images/menu-meals.png'
+import CardOrder from '../../../global/CardOrder'
 
 class CartSubTotal extends Component {
   render () {
@@ -60,83 +60,16 @@ class CartSubTotal extends Component {
 
   renderReceipt = () => {
     return (
-      <View style={styles['receipt']}>
-        <Image
-          source={menuMeals}
-          style={styles['receipt__icon']}
-        />
-
-        <View style={styles['receipt__info']}>
-          <Text
-            style={[
-              BaseStyle['text'],
-              BaseStyle['text--large'],
-              BaseStyle['text--black'],
-              BaseStyle['text--semibold']
-            ]}
-          >
-             1. Cheese Burger meal
-          </Text>
-
-          <Text
-            style={[
-              BaseStyle['text'],
-              BaseStyle['text--large'],
-              BaseStyle['text--grey'],
-              { marginTop: 10 }
-            ]
-            }
-          >
-             Cheese Burger
-          </Text>
-
-          <Text
-            style={[
-              BaseStyle['text'],
-              BaseStyle['text--large'],
-              BaseStyle['text--grey']
-            ]}
-          >
-             Fries Pack
-          </Text>
-
-          <Text
-            style={[
-              BaseStyle['text'],
-              BaseStyle['text--large'],
-              BaseStyle['text--grey']
-            ]}
-          >
-             Coca cola (250 ml)
-          </Text>
-
-          <Text
-            style={[
-              BaseStyle['text'],
-              BaseStyle['text--large'],
-              BaseStyle['text--grey']
-            ]}
-          >
-            No Add On
-          </Text>
-
-          <Text
-            style={[
-              BaseStyle['text'],
-              BaseStyle['text--large'],
-              BaseStyle['text--orange'],
-              BaseStyle['text--bold'],
-              {
-                marginTop: 30,
-                marginRight: 20,
-                marginLeft: 'auto'
-              }
-            ]}
-          >
-            520 LKR
-          </Text>
-        </View>
-      </View>
+      <CardOrder
+        mealPackage='1 Cheese Burger meal'
+        listPackage={[
+          'Cheese Burger',
+          'Fries pack',
+          'Coca Cola (250l)',
+          'No Add on'
+        ]}
+        price={250}
+      />
     )
   }
 
@@ -223,23 +156,6 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 20
-  },
-  receipt: {
-    flexDirection: 'row',
-    borderRadius: 10,
-    backgroundColor: '#FFFFFF',
-    overflow: 'hidden',
-    paddingVertical: 20
-  },
-  receipt__icon: {
-    height: 130,
-    width: 155,
-    marginTop: -20,
-    marginLeft: -40
-  },
-  receipt__info: {
-    flex: 1,
-    marginLeft: 20
   },
   'promote-code': {
     marginTop: 20

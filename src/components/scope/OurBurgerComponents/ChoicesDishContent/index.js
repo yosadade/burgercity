@@ -16,7 +16,7 @@ class ChoicesDishContent extends Component {
           isActive: false
         },
         {
-          name: 'Medium',
+          name: 'Medium Fries',
           isActive: true
         }
       ]
