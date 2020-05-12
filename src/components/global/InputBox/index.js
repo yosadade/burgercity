@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 const InputBox = (props) => {
   const inputStyle = [
     styles['input-box'],
-    props.icon === null && { paddingLeft: 20 }
+    props.icon === null &&
+    { paddingLeft: 20 }
   ]
 
   const onChangeText = (value) => {
@@ -26,7 +27,7 @@ const InputBox = (props) => {
         placeholder={props.placeholder}
         placeholderTextColor='#727c8e'
         secureTextEntry={props.password}
-        styles={inputStyle}
+        style={inputStyle}
         onChangeText={onChangeText}
       />
     </View>

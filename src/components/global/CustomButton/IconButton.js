@@ -127,7 +127,7 @@ IconButton.propTypes = {
     PropTypes.object,
     PropTypes.array
   ]),
-  disabled: PropTypes.func,
+  disabled: PropTypes.bool,
   onPress: PropTypes.func
 }
 

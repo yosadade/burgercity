@@ -68,6 +68,10 @@ const App = () => {
           name='HomeTab'
           component={HomeTab}
         />
+        <Stack.Screen
+          name='FavouritesScreen'
+          component={FavouritesScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )

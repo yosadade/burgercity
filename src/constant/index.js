@@ -17,6 +17,9 @@ export const BaseStyle = StyleSheet.create({
   'text--black': {
     color: '#1D2126'
   },
+  'text--extrabold': {
+    fontFamily: 'Nunito-ExtraBold'
+  },
   'text--bold': {
     fontFamily: 'Nunito-Bold'
   },
@@ -43,6 +46,9 @@ export const BaseStyle = StyleSheet.create({
   },
   'text--3xl': {
     fontSize: 20
+  },
+  'text--giant': {
+    fontSize: 45
   },
   'text--left': {
     textAlign: 'left'
