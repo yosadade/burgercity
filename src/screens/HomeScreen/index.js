@@ -3,15 +3,14 @@ import {
   Text,
   View,
   StatusBar,
-  // TouchableOpacity,
   Image,
-  StyleSheet,
   Dimensions,
   ImageBackground,
   FlatList,
   ScrollView
 }
   from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 import Carousel, { Pagination } from 'react-native-snap-carousel'
 
@@ -215,7 +214,7 @@ class HomeScreen extends Component {
 
 export default HomeScreen
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff'
@@ -224,11 +223,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 30
+    marginTop: '24rem'
   },
   btn: {
-    paddingVertical: 15,
-    paddingHorizontal: 20
+    paddingVertical: '12rem',
+    paddingHorizontal: '16rem'
   },
   lang_btn: {
     flexDirection: 'row',
@@ -246,7 +245,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: 'Nunito-Bold',
-    fontSize: 18,
+    fontSize: '14rem',
     color: '#ff9f1c',
     includeFontPadding: false
   },
@@ -254,19 +253,19 @@ const styles = StyleSheet.create({
   },
   home__slider__text: {
     position: 'absolute',
-    top: 20,
-    left: 20,
-    width: 250,
+    top: '16rem',
+    left: '16rem',
+    width: '210rem',
     fontFamily: 'Nunito-Bold',
-    fontSize: 28,
+    fontSize: '23rem',
     color: '#ffffff'
   },
   home__pagination_dot__container: {
-    marginHorizontal: 2
+    marginHorizontal: '2rem'
   },
   home__pagination__dot: {
-    width: 8,
-    height: 8,
+    width: '7rem',
+    height: '7rem',
     borderRadius: 4,
     backgroundColor: 'white'
   },
@@ -277,77 +276,77 @@ const styles = StyleSheet.create({
     left: 0,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    paddingVertical: 20,
-    paddingHorizontal: 20
+    paddingVertical: '16rem',
+    paddingHorizontal: '16rem'
   },
   home__order: {
-    marginTop: 8
+    marginTop: '7rem'
   },
   home__order__ticket: {
-    marginHorizontal: 20,
-    marginTop: 18
+    marginHorizontal: '16rem',
+    marginTop: '14rem'
   },
   home__order__ticket__content: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 20,
-    paddingHorizontal: 45
+    paddingVertical: '16rem',
+    paddingHorizontal: '36rem'
   },
   home__order__ticket__desc: {
-    marginLeft: 20
+    marginLeft: '16rem'
   },
   home__order__title: {
     fontFamily: 'Nunito-Bold',
-    fontSize: 20,
+    fontSize: '16rem',
     color: '#ffffff',
     includeFontPadding: false
   },
   home__order__subtitle: {
     fontFamily: 'Nunito-Bold',
-    fontSize: 12,
+    fontSize: '10rem',
     color: '#ffffff',
     includeFontPadding: false
   },
   'home__best-offer': {
-    marginTop: 25,
-    marginBottom: 25
+    marginTop: '21rem',
+    marginBottom: '21rem'
   },
   'home__best-offer__title': {
     fontFamily: 'Nunito-Bold',
-    fontSize: 18,
+    fontSize: '14rem',
     color: '#1D2126',
     includeFontPadding: false,
-    paddingHorizontal: 20
+    paddingHorizontal: '16rem'
   },
   'home__best-offer__list': {
-    paddingHorizontal: 13,
-    marginTop: 15
+    paddingHorizontal: '10rem',
+    marginTop: '12rem'
   },
   'home__best-offer__image': {
-    marginHorizontal: 7
+    marginHorizontal: '6rem'
   },
   'home__best-offer__info': {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 15,
-    marginHorizontal: 10
+    marginTop: '12rem',
+    marginHorizontal: '8rem'
   },
   'home__best-offer__name': {
     fontFamily: 'Nunito-Reguler',
-    fontSize: 14,
+    fontSize: '12rem',
     color: '#1d2126',
     includeFontPadding: false
   },
   'home__best-offer__price': {
     fontFamily: 'Nunito-Bold',
-    fontSize: 12,
+    fontSize: '10rem',
     color: '#ff9f1c',
     includeFontPadding: false
   },
   'home__best-offer__rate': {
-    marginLeft: 10,
-    marginTop: 5,
-    paddingRight: 60
+    marginLeft: '8rem',
+    marginTop: '4rem',
+    paddingRight: '48rem'
   }
 })

@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import {
   Text,
   Image,
-  StyleSheet,
   View,
   ImageBackground,
   StatusBar,
   YellowBox,
   FlatList
 } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 
@@ -177,7 +177,7 @@ class LoginScreen extends Component {
 
 export default LoginScreen
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   onboarding__bg: {
     width: '100%',
     height: '100%'
@@ -192,69 +192,54 @@ const styles = StyleSheet.create({
   },
   onboarding__logo: {
     alignItems: 'center',
-    marginTop: 70
+    marginTop: '57rem'
   },
   onboarding__lead: {
     alignItems: 'center',
-    marginTop: 40
+    marginTop: '33rem'
   },
   'onboarding__lead--h1': {
     fontFamily: 'Nunito-Bold',
-    fontSize: 25,
+    fontSize: '21rem',
     color: '#ffffff',
     includeFontPadding: false
   },
   'onboarding__lead--p': {
     fontFamily: 'Nunito-SemiBold',
-    fontSize: 18,
+    fontSize: '14rem',
     color: '#ffffff',
     includeFontPadding: false,
-    marginTop: 3,
-    marginBottom: 40
+    marginTop: '2rem',
+    marginBottom: '33rem'
   },
   onboarding__form: {
-    paddingHorizontal: 25,
-    marginTop: 35
+    paddingHorizontal: '20rem',
+    marginTop: '28rem'
   },
   onboarding__input__icon: {
-    marginRight: 10,
-    marginLeft: 20
+    marginRight: '8rem',
+    marginLeft: '16rem'
   },
   onboarding__option: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 15
+    marginTop: '12rem'
   },
   onboarding__option__text: {
-    fontSize: 12,
+    fontSize: '10rem',
     color: '#ffffff',
     includeFontPadding: false,
-    marginLeft: 5
+    marginLeft: '4rem'
   },
   'onboarding__sign-up': {
     alignItems: 'center',
-    marginTop: 20
+    marginTop: '16rem'
   },
   'onboarding__sign-up__text': {
     fontFamily: 'Nunito-Semibold',
-    fontSize: 12,
+    fontSize: '10rem',
     color: '#ff9f1c',
     includeFontPadding: false
-  },
-  onboarding__footer: {
-    marginTop: 35,
-    alignItems: 'center'
-  },
-  onboarding__footer__text: {
-    fontFamily: 'Nunito-Regular',
-    fontSize: 12,
-    color: '#ffffff',
-    includeFontPadding: false,
-    width: 250,
-    textAlign: 'center'
-  },
-  'onboarding__footer__text--underline': {
-    textDecorationLine: 'underline'
   }
 })

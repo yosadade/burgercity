@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {
   Text,
   Image,
-  StyleSheet,
   View,
   ImageBackground,
   StatusBar,
@@ -11,6 +10,7 @@ import {
   TouchableOpacity
 } from 'react-native'
 import PropTypes from 'prop-types'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
@@ -276,7 +276,7 @@ LoginScreen.propTypes = {
 
 export default LoginScreen
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   onboarding__bg: {
     width: '100%',
     height: '100%'
@@ -291,79 +291,79 @@ const styles = StyleSheet.create({
   },
   onboarding__logo: {
     alignItems: 'center',
-    marginTop: 70
+    marginTop: '60rem'
   },
   onboarding__lead: {
     alignItems: 'center',
-    marginTop: 40
+    marginTop: '33rem'
   },
   'onboarding__lead--h1': {
     fontFamily: 'Nunito-Bold',
-    fontSize: 25,
+    fontSize: '21rem',
     color: '#ffffff',
     includeFontPadding: false
   },
   'onboarding__lead--p': {
     fontFamily: 'Nunito-SemiBold',
-    fontSize: 18,
+    fontSize: '15rem',
     color: '#ffffff',
     includeFontPadding: false,
-    marginTop: 3,
-    marginBottom: 40
+    marginTop: '2rem',
+    marginBottom: '33rem'
   },
   onboarding__form: {
-    paddingHorizontal: 25,
-    marginTop: 35
+    paddingHorizontal: '20rem',
+    marginTop: '28rem'
   },
   onboarding__input__icon: {
-    marginRight: 10,
-    marginLeft: 20
+    marginRight: '8rem',
+    marginLeft: '16rem'
   },
   onboarding__option: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 15
+    marginTop: '12rem'
   },
   onboarding__option__text: {
-    fontSize: 12,
+    fontSize: '10rem',
     color: '#ffffff',
     includeFontPadding: false,
-    marginLeft: 5
+    marginLeft: '4rem'
   },
   onboarding__button: {
     borderRadius: 8,
     alignItems: 'center',
     backgroundColor: '#ff9f1c',
-    paddingVertical: 15,
-    marginTop: 15
+    paddingVertical: '12rem',
+    marginTop: '12rem'
   },
   onboarding__button__text: {
     fontFamily: 'Nunito-Black',
-    fontSize: 16,
+    fontSize: '13rem',
     color: '#ffffff',
     includeFontPadding: false
   },
   'onboarding__sign-up': {
     alignItems: 'center',
-    marginTop: 20
+    marginTop: '16rem'
   },
   'onboarding__sign-up__text': {
     fontFamily: 'Nunito-Semibold',
-    fontSize: 12,
+    fontSize: '10rem',
     color: '#ff9f1c',
     includeFontPadding: false
   },
   onboarding__footer: {
-    marginTop: 35,
+    marginTop: '29rem',
     alignItems: 'center'
   },
   onboarding__footer__text: {
     fontFamily: 'Nunito-Regular',
-    fontSize: 12,
+    fontSize: '10rem',
     color: '#ffffff',
     includeFontPadding: false,
-    width: 250,
+    width: '210rem',
     textAlign: 'center'
   },
   'onboarding__footer__text--underline': {

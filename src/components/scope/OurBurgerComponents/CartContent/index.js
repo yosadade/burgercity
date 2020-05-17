@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, Image, ScrollView, FlatList } from 'react-native'
+import { Text, View, Image, ScrollView, FlatList } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import { BaseStyle } from '../../../../constant'
 
 import { StandardButton } from '../../../global/CustomButton'
@@ -172,9 +173,9 @@ CartContent.propTypes = {
 
 export default CartContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
-    padding: 20
+    padding: '16rem'
   },
   lead__hero: {
     height: 180,
@@ -183,30 +184,30 @@ const styles = StyleSheet.create({
   },
   button__wrapper: {
     flexDirection: 'row',
-    marginTop: 40
+    marginTop: '32rem'
   },
   meals__wrapper: {
-    marginTop: 20
+    marginTop: '16rem'
   },
   meals__item: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: '8rem',
     backgroundColor: '#FFFFFF',
-    paddingVertical: 20,
-    paddingHorizontal: 20,
-    marginTop: 15,
-    minHeight: 50
+    paddingVertical: '16rem',
+    paddingHorizontal: '16rem',
+    marginTop: '12rem',
+    minHeight: '40rem'
   },
   meals__item__icon: {
-    width: 30,
-    height: 30,
-    marginRight: 20
+    width: '24rem',
+    height: '24rem',
+    marginRight: '16rem'
   },
   meals__item__button: {
     marginLeft: 'auto',
     padding: 0,
-    paddingVertical: 5,
-    paddingHorizontal: 10
+    paddingVertical: '4rem',
+    paddingHorizontal: '8rem'
   }
 })

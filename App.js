@@ -8,7 +8,8 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { YellowBox } from 'react-native'
+import { YellowBox, Dimensions } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import OnBoardingScreen from './src/screens/OnBoardingScreen'
 import LoginScreen from './src/screens/LoginScreen'
 import ForgotPasswordScreen from './src/screens/ForgotPassword'
@@ -40,6 +41,10 @@ const Tab = createBottomTabNavigator()
 
 const App = () => {
   YellowBox.ignoreWarnings(['FlatList: Calling `getNode()`'])
+  const { width } = Dimensions.get('window')
+  EStyleSheet.build({
+    $rem: width / 320
+  })
   return (
     <NavigationContainer>
       <Stack.Navigator

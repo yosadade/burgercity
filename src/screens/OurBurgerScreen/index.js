@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Dimensions, Text, StatusBar } from 'react-native'
+import { View, Dimensions, Text, StatusBar } from 'react-native'
 import Carousel from 'react-native-snap-carousel'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 import Header from '../../components/global/Header'
 import OrderMethodContent from '../../components/scope/OurBurgerComponents/OrderMethodContent'
@@ -157,64 +158,9 @@ class OurBurgerScreen extends Component {
 
 export default OurBurgerScreen
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5F5F7'
-  },
-  content: {
-    flex: 1
-  },
-  'order-method': {
-    paddingHorizontal: 20,
-    paddingTop: 25
-  },
-  'order-method__list': {
-    paddingHorizontal: 20
-  },
-  'order-method__button': {
-    borderRadius: 6,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: '#FFFFFF',
-    paddingVertical: 15,
-    paddingHorizontal: 20
-  },
-  proceed__button: {
-    marginTop: 'auto',
-    marginHorizontal: 20,
-    marginBottom: 30
-  },
-
-  text: {
-    includeFontPadding: false
-  },
-  'text--black': {
-    color: '#1D2126'
-  },
-  'text--bold': {
-    fontFamily: 'Nunito-Bold'
-  },
-  'text--semibold': {
-    fontFamily: 'Nunito-SemiBold'
-  },
-  'text--small': {
-    fontSize: 10
-  },
-  'text-medium': {
-    fontSize: 12
-  },
-  'text--large': {
-    fontSize: 14
-  },
-  'text--xl': {
-    fontSize: 16
-  },
-  'text--xxl': {
-    fontSize: 18
-  },
-  'text--3xl': {
-    fontSize: 20
   }
 })

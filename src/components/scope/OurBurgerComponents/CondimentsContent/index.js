@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, View } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 import { IconButton, StandardButton } from '../../../global/CustomButton'
 import { BaseStyle } from '../../../../constant'
@@ -93,10 +94,10 @@ CondimentsContent.propTypes = {
 
 export default CondimentsContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
-    padding: 20
+    padding: '16rem'
   },
   wrapper__button: {
     marginTop: 'auto'

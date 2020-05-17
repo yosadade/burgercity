@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, Image, FlatList } from 'react-native'
+import { Text, View, Image, FlatList } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
+
 import { BaseStyle } from '../../../../constant'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
@@ -107,16 +109,16 @@ SelectedDishContent.propTypes = {
 
 export default SelectedDishContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
-    padding: 20
+    padding: '16rem'
   },
   lead: {
-    paddingHorizontal: 20,
-    paddingTop: 25
+    paddingHorizontal: '16rem',
+    paddingTop: '20rem'
   },
   lead__hero: {
-    marginTop: 50
+    marginTop: '40rem'
   }
 })

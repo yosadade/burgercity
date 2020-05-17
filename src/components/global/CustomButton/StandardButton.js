@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { Text, TouchableOpacity } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 const StandardButton = (props) => {
   const { titleButton, disabled, buttonStyle } = props
@@ -53,12 +54,12 @@ StandardButton.defaultProps = {
   buttonStyle: {}
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   button: {
-    borderRadius: 8,
+    borderRadius: '8rem',
     alignItems: 'center',
     backgroundColor: '#ff9f1c',
-    paddingVertical: 15
+    paddingVertical: '12rem'
   },
   'button--active': {
     backgroundColor: '#ff9f1c'
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: 'Nunito-Black',
-    fontSize: 16,
+    fontSize: '13rem',
     color: '#ffffff',
     includeFontPadding: false
   },

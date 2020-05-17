@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import {
   Text,
   Image,
-  StyleSheet,
   View,
   ImageBackground,
   StatusBar,
   Dimensions,
   YellowBox
 } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import PropTypes from 'prop-types'
 
 import bgImage from '../../assets/images/background-image.png'
@@ -139,7 +139,7 @@ OnBoardingScreen.propTypes = {
 
 export default OnBoardingScreen
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   onboarding__bg: {
     width: '100%',
     height: '100%'
@@ -154,42 +154,42 @@ const styles = StyleSheet.create({
   },
   onboarding__logo: {
     alignItems: 'center',
-    marginTop: 70
+    marginTop: '57rem'
   },
   onboarding__hero__container: {
     position: 'absolute',
     top: 0,
     right: 0,
-    bottom: 150,
+    bottom: '125rem',
     left: 0
   },
   onboarding__hero__wrapper: {
-    paddingHorizontal: 30,
+    paddingHorizontal: '24rem',
     marginTop: 'auto'
   },
   onboarding__hero: {
-    fontSize: 31,
+    fontSize: '25rem',
     color: '#ffffff',
     fontFamily: 'Nunito-Bold'
   },
   onboarding__pagination__dot__container: {
-    marginHorizontal: 2
+    marginHorizontal: '2rem'
   },
   onboarding__pagination__dot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: 'white'
+    width: '6rem',
+    height: '6rem',
+    borderRadius: '4rem',
+    backgroundColor: '#FFFFFF'
   },
   onboarding__pagination__container: {
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    paddingVertical: 20,
-    paddingHorizontal: 30
+    paddingVertical: '17rem',
+    paddingHorizontal: '24rem'
   },
   onboarding__button: {
-    marginHorizontal: 30,
+    marginHorizontal: '24rem',
     marginTop: 'auto',
-    marginBottom: 50
+    marginBottom: '40rem'
   }
 })

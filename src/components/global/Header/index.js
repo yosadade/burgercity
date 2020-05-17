@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native'
+import { View, TouchableOpacity, Text, Image } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Feather from 'react-native-vector-icons/Feather'
 import logo from '../../../assets/icons/logo.png'
@@ -81,17 +82,17 @@ LeftButton.propTypes = {
 
 export default Header
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 20,
+    marginTop: '16rem',
     backgroundColor: '#FFFFFF'
   },
   btn: {
-    paddingVertical: 15,
-    paddingHorizontal: 20
+    paddingVertical: '12rem',
+    paddingHorizontal: '16rem'
   },
   lang_btn: {
     flexDirection: 'row',

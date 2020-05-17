@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
   Text,
-  StyleSheet,
   View,
   TouchableOpacity
 } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import MaterialComunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
@@ -176,46 +176,46 @@ PickupDateTimeContent.propTypes = {
 
 export default PickupDateTimeContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingTop: 30
+    paddingHorizontal: '16rem',
+    paddingTop: '24rem'
   },
   date: {
 
   },
   time: {
-    marginTop: 30
+    marginTop: '24rem'
   },
   time__picker: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: -7,
-    marginTop: 18
+    marginTop: '15rem'
   },
   time__picker__button: {
-    borderRadius: 5,
+    borderRadius: '4rem',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    height: 45,
+    height: '36rem',
     backgroundColor: '#FFFFFF',
-    marginHorizontal: 7
+    marginHorizontal: '6rem'
   },
   edit__button: {
-    borderRadius: 5,
+    borderRadius: '4rem',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#FFFFFF',
-    paddingVertical: 15,
-    paddingLeft: 20,
-    paddingRight: 15,
-    marginTop: 18
+    backgroundColor: 'red',
+    paddingVertical: '12rem',
+    paddingLeft: '16rem',
+    paddingRight: '12rem',
+    marginTop: '15rem'
   },
   'proceed-order__button': {
     marginTop: 'auto',
-    marginBottom: 30
+    marginBottom: '24rem'
   }
 })

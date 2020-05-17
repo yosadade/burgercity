@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, Image, FlatList } from 'react-native'
+import { Text, View, Image, FlatList } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import { BaseStyle } from '../../../constant'
 
 import menuMeals from '../../../assets/images/menu-meals.png'
@@ -117,22 +118,22 @@ CardOrder.propTypes = {
 
 export default CardOrder
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   receipt: {
     flexDirection: 'row',
-    borderRadius: 10,
+    borderRadius: '10rem',
     backgroundColor: '#FFFFFF',
     overflow: 'hidden',
-    paddingVertical: 20
+    paddingVertical: '16rem'
   },
   receipt__icon: {
-    height: 130,
-    width: 155,
-    marginTop: -20,
-    marginLeft: -40
+    height: '104rem',
+    width: '124rem',
+    marginTop: '-16rem',
+    marginLeft: '-32rem'
   },
   receipt__info: {
     flex: 1,
-    marginLeft: 20
+    marginLeft: '16rem'
   }
 })

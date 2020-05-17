@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { TouchableOpacity, StyleSheet, View, Text } from 'react-native'
+import { TouchableOpacity, View, Text } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { BaseStyle } from '../../../constant'
@@ -171,22 +172,22 @@ IconButton.defaultProps = {
 
 export default IconButton
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   button: {
-    borderRadius: 6,
+    borderRadius: '6rem',
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
-    paddingVertical: 15,
-    paddingHorizontal: 20
+    paddingVertical: '12rem',
+    paddingHorizontal: '16rem'
   },
   'section--left': {
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-    maxHeight: 60,
-    maxWidth: 60,
-    marginRight: 20
+    maxHeight: '48rem',
+    maxWidth: '48rem',
+    marginRight: '16rem'
   },
   'section--right': {
     flexDirection: 'row',

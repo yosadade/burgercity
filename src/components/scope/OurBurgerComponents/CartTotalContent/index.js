@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, FlatList, ScrollView, Image } from 'react-native'
+import { Text, View, FlatList, ScrollView, Image } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import { BaseStyle } from '../../../../constant'
 import InputBox from '../../../global/InputBox'
 
@@ -277,44 +278,44 @@ CartTotalContent.propTypes = {
 
 export default CartTotalContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1
   },
   'review-confirm': {
     backgroundColor: '#1F2126',
-    padding: 20
+    padding: '16rem'
   },
   'review-confirm__item': {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 8
+    marginTop: '7rem'
   },
   'total-cost': {
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: '#11191E',
-    paddingVertical: 10,
-    paddingHorizontal: 20
+    paddingVertical: '8rem',
+    paddingHorizontal: '16rem'
   },
   address: {
     backgroundColor: '#1C272E',
-    paddingTop: 10,
-    paddingBottom: 12,
-    paddingHorizontal: 20,
-    marginTop: 15
+    paddingTop: '8rem',
+    paddingBottom: '10rem',
+    paddingHorizontal: '16rem',
+    marginTop: '12rem'
   },
   summary: {
-    padding: 20
+    padding: '16rem'
   },
   beverages: {
-    borderRadius: 10,
+    borderRadius: '8rem',
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
-    paddingVertical: 5,
-    paddingHorizontal: 20,
-    marginTop: 15
+    paddingVertical: '4rem',
+    paddingHorizontal: '16rem',
+    marginTop: '12rem'
   }
 })

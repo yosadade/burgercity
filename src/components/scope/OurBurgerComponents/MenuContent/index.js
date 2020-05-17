@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, FlatList, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { Text, View, FlatList, TouchableOpacity, Image, ScrollView } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import { BaseStyle } from '../../../../constant'
 
 import MenuMeals from '../../../../assets/images/menu-meals.png'
@@ -153,23 +154,23 @@ MenuContent.propTypes = {
 
 export default MenuContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1
   },
   'deck-info': {
     backgroundColor: '#1c272e',
-    padding: 20
+    padding: '16rem'
   },
   menu__button: {
-    borderRadius: 5,
+    borderRadius: '4rem',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
-    margin: 10,
-    paddingTop: 10,
-    paddingBottom: 15
+    margin: '8rem',
+    paddingTop: '8rem',
+    paddingBottom: '12rem'
   },
   menu: {
     alignItems: 'center',

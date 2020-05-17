@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View, FlatList, Image, Text } from 'react-native'
+import { View, FlatList, Image, Text } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
@@ -126,19 +127,19 @@ DishContent.propTypes = {
 
 export default DishContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1
   },
   badge: {
-    borderRadius: 25,
+    borderRadius: '20rem',
     position: 'absolute',
-    top: 25,
-    left: 50,
+    top: '20rem',
+    left: '40rem',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 25,
-    width: 25,
+    height: '20rem',
+    width: '20rem',
     backgroundColor: '#C40304'
   }
 })

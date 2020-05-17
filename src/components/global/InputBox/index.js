@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, TextInput, StyleSheet } from 'react-native'
+import { View, TextInput } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import PropTypes from 'prop-types'
 
 const InputBox = (props) => {
@@ -75,26 +76,26 @@ InputBox.defaultProps = {
 
 export default InputBox
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
-    borderRadius: 7,
+    borderRadius: '7rem',
     overflow: 'hidden',
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#ffffff',
-    marginBottom: 20
+    marginBottom: '16rem'
   },
   icon: {
-    marginRight: 10,
-    marginLeft: 20
+    marginRight: '8rem',
+    marginLeft: '16rem'
   },
   'input-box': {
     flex: 1,
-    height: 45,
+    height: '36rem',
     fontFamily: 'Nunito-Regular',
-    fontSize: 14,
+    fontSize: '11rem',
     color: '#727cbe',
     // includeFontPadding: false,
-    paddingLeft: 30
+    paddingLeft: '24rem'
   }
 })

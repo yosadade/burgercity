@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, TextInput, ScrollView } from 'react-native'
+import { Text, View, TextInput, ScrollView } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import EStyleSheet from 'react-native-extended-stylesheet'
+
 import { BaseStyle } from '../../../../constant'
 import { IconButton, StandardButton } from '../../../global/CustomButton'
 
@@ -142,7 +144,7 @@ CartSubTotal.propTypes = {
 
 export default CartSubTotal
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
   },
   lead: {
@@ -150,26 +152,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#1D2126',
-    padding: 20,
-    paddingVertical: 25,
-    paddingHorizontal: 20
+    padding: '16rem',
+    paddingVertical: '20rem',
+    paddingHorizontal: '16rem'
   },
   content: {
-    padding: 20
+    padding: '16rem'
   },
   'promote-code': {
-    marginTop: 20
+    marginTop: '16rem'
   },
   'promote-code__input': {
     backgroundColor: '#FFFFFF',
-    borderRadius: 10,
+    borderRadius: '8rem',
     height: 'auto',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingVertical: '8rem',
+    paddingHorizontal: '16rem',
     fontFamily: 'Nunito-Regular',
-    marginTop: 10
+    marginTop: '8rem'
   },
   condiments: {
-    marginTop: 20
+    marginTop: '16rem'
   }
 })

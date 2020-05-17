@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View, FlatList } from 'react-native'
+import { Text, View, FlatList } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import PropTypes from 'prop-types'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -124,29 +125,29 @@ ChoicesDishContent.propTypes = {
 
 export default ChoicesDishContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   content: {
     flex: 1
   },
   'order-method': {
-    paddingHorizontal: 20,
-    paddingTop: 25
+    paddingHorizontal: '16rem',
+    paddingTop: '20rem'
   },
   'order-method__list': {
-    paddingHorizontal: 20
+    paddingHorizontal: '16rem'
   },
   'order-method__button': {
-    borderRadius: 6,
+    borderRadius: '6rem',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#FFFFFF',
-    paddingVertical: 15,
-    paddingHorizontal: 20
+    paddingVertical: '12rem',
+    paddingHorizontal: '16rem'
   },
   proceed__button: {
     marginTop: 'auto',
-    marginHorizontal: 20,
-    marginBottom: 30
+    marginHorizontal: '16rem',
+    marginBottom: '24rem'
   }
 })

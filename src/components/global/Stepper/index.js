@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import Entypo from 'react-native-vector-icons/Entypo'
 
 import { BaseStyle } from '../../../constant'
@@ -109,17 +110,17 @@ Stepper.propTypes = {
 
 export default Stepper
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
-    borderRadius: 10,
+    borderRadius: '8rem',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    minWidth: 110,
+    minWidth: '88rem',
     backgroundColor: '#FFFFFF'
   },
   button: {
-    borderRadius: 20,
+    borderRadius: '16rem',
     backgroundColor: '#E3E5E8'
   }
 })

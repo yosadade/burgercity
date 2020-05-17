@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
+import { Text, View, TouchableOpacity } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import { BaseStyle } from '../../../../constant'
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
@@ -243,24 +244,24 @@ DeliveryAddressContent.propTypes = {
 
 export default DeliveryAddressContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingTop: 30
+    paddingHorizontal: '16rem',
+    paddingTop: '24rem'
   },
   setting: {
     flexDirection: 'row',
     // justifyContent: 'space-between',
-    marginTop: 20,
-    borderRadius: 5,
+    marginTop: '16rem',
+    borderRadius: '4rem',
     overflow: 'hidden'
   },
   setting__button: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 12
+    padding: '10rem'
   },
   'setting__button--active': {
     backgroundColor: '#FF9F1C'
@@ -269,25 +270,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF'
   },
   setting__content: {
-    marginTop: 20,
+    marginTop: '16rem',
     flex: 1
   },
   edit__button: {
-    borderRadius: 5,
+    borderRadius: '4rem',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#FFFFFF',
-    paddingVertical: 15,
-    paddingLeft: 20,
-    paddingRight: 10,
-    marginTop: 18
+    paddingVertical: '12rem',
+    paddingLeft: '16rem',
+    paddingRight: '8rem',
+    marginTop: '14rem'
   },
   schedule: {
-    marginTop: 30
+    marginTop: '24rem'
   },
   'proceed-order__button': {
     marginTop: 'auto',
-    marginBottom: 30
+    marginBottom: '24rem'
   }
 })

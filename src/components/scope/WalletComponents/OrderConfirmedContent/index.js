@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, Image, StatusBar } from 'react-native'
+import { Text, View, Image, StatusBar } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import Modal from 'react-native-modal'
 
 import { BaseStyle } from '../../../../constant'
@@ -242,47 +243,47 @@ OrderConfirmedContent.propTypes = {
 
 export default OrderConfirmedContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   container: {
     flex: 1
   },
   'detail--confirmation': {
     backgroundColor: '#1D2126',
-    paddingTop: 20,
-    paddingBottom: 12,
-    paddingHorizontal: 20
+    paddingTop: '16rem',
+    paddingBottom: '10rem',
+    paddingHorizontal: '16rem'
   },
   address: {
     backgroundColor: '#1D2126',
-    paddingTop: 20,
-    paddingBottom: 12,
-    paddingHorizontal: 20
+    paddingTop: '16rem',
+    paddingBottom: '10rem',
+    paddingHorizontal: '16rem'
   },
   wrapper__button: {
     flexDirection: 'row',
-    padding: 20,
+    padding: '16rem',
     marginTop: 'auto'
   },
   bonus__modal: {
-    borderRadius: 10,
+    borderRadius: '8rem',
     backgroundColor: '#FFFFFF',
-    marginHorizontal: 20,
-    padding: 20
+    marginHorizontal: '16rem',
+    padding: '16rem'
   },
   bonus__image__wrapper: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 130,
-    height: 130,
-    width: 130,
+    borderRadius: '104rem',
+    height: '104rem',
+    width: '104rem',
     backgroundColor: '#FFFFFF',
     alignSelf: 'center',
-    marginTop: -50,
-    marginBottom: 10
+    marginTop: '-40rem',
+    marginBottom: '8rem'
   },
   bonus__image: {
-    height: 100,
-    width: 60,
-    marginBottom: -25
+    height: '80rem',
+    width: '48rem',
+    marginBottom: '-21rem'
   }
 })

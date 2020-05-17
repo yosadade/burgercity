@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, StyleSheet, View, FlatList, ScrollView } from 'react-native'
+import { Text, View, FlatList, ScrollView } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { BaseStyle } from '../../../../constant'
@@ -143,14 +144,14 @@ OrderPaymentContent.propTypes = {
 
 export default OrderPaymentContent
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   payment: {
-    padding: 20
+    padding: '16rem'
   },
   'security-check': {
     borderTopWidth: 1,
     borderTopColor: '#E2E3E7',
-    padding: 20,
-    marginTop: 10
+    padding: '16rem',
+    marginTop: '8rem'
   }
 })
