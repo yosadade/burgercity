@@ -121,7 +121,7 @@ class HomeScreen extends Component {
     const { activeSlide } = this.state
     return (
       <Pagination
-        dotsLength={3}
+        dotsLength={4}
         activeDotIndex={activeSlide}
         dotStyle={styles['home__pagination__dot']}
         dotContainerStyle={styles['home__pagination_dot__container']}
@@ -228,7 +228,7 @@ const mapDispatchToProps = dispatch => (
 )
 
 HomeScreen.propTypes = {
-  banners: PropTypes.object
+  banners: PropTypes.array
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
