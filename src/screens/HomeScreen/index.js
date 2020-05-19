@@ -10,17 +10,20 @@ import {
   ScrollView
 }
   from 'react-native'
+import PropTypes from 'prop-types'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
 import Carousel, { Pagination } from 'react-native-snap-carousel'
 
-import sliderImg from '../../assets/images/slider-image.png'
 import ticketBg from '../../assets/images/ticket-background.png'
 import burgerLogo from '../../assets/icons/burger-city-logo.png'
 import offer1 from '../../assets/images/image-1.png'
 import offer2 from '../../assets/images/image-2.png'
 import offer3 from '../../assets/images/image-15.png'
 import StarRating from 'react-native-star-rating'
+
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import Header from '../../components/global/Header'
 
@@ -84,9 +87,10 @@ class HomeScreen extends Component {
 
   renderCarousel = () => {
     const { width } = Dimensions.get('window')
+    const { banners } = this.props
     return (
       <Carousel
-        data={[0, 0, 0]}
+        data={banners}
         renderItem={this.renderCarouselItem}
         decelerationRate='fast'
         sliderWidth={width}
@@ -96,17 +100,19 @@ class HomeScreen extends Component {
     )
   }
 
-  renderCarouselItem = ({ _item }) => {
+  renderCarouselItem = ({ item }) => {
     return (
       <View style={styles['home__slider__wrapper']}>
-        <Image
-          source={sliderImg}
+        <ImageBackground
+          source={{ uri: item.imageUrl }}
           resizeMode='cover'
-        />
-
-        <Text style={styles['home__slider__text']}>
-          Worlds Greates Burgers,
-        </Text>
+          style={styles['home__slider__image']}
+        >
+          <View style={styles['home__slider__image__overlay']} />
+          <Text style={styles['home__slider__text']}>
+            {item.lead}
+          </Text>
+        </ImageBackground>
       </View>
     )
   }
@@ -212,7 +218,20 @@ class HomeScreen extends Component {
   }
 }
 
-export default HomeScreen
+const mapStateToProps = (state) => {
+  const { banners, bestOffer } = state.home
+  return { banners, bestOffer }
+}
+
+const mapDispatchToProps = dispatch => (
+  bindActionCreators({}, dispatch)
+)
+
+HomeScreen.propTypes = {
+  banners: PropTypes.object
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
 
 const styles = EStyleSheet.create({
   container: {
@@ -250,6 +269,19 @@ const styles = EStyleSheet.create({
     includeFontPadding: false
   },
   home__slider__wrapper: {
+    // paddingHorizontal: '30rem'
+  },
+  home__slider__image: {
+    height: '210rem',
+    width: '100%'
+  },
+  home__slider__image__overlay: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)'
   },
   home__slider__text: {
     position: 'absolute',
@@ -258,7 +290,8 @@ const styles = EStyleSheet.create({
     width: '210rem',
     fontFamily: 'Nunito-Bold',
     fontSize: '23rem',
-    color: '#ffffff'
+    color: '#ffffff',
+    lineHeight: 35
   },
   home__pagination_dot__container: {
     marginHorizontal: '2rem'

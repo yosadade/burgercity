@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
-export const BaseStyle = StyleSheet.create({
+export const BaseStyle = EStyleSheet.create({
   text: {
     includeFontPadding: false,
     fontFamily: 'Nonito-Regular'
@@ -27,28 +27,28 @@ export const BaseStyle = StyleSheet.create({
     fontFamily: 'Nunito-SemiBold'
   },
   'text--extraSmall': {
-    fontSize: 8
+    fontSize: '6rem'
   },
   'text--small': {
-    fontSize: 10
+    fontSize: '8rem'
   },
   'text-medium': {
-    fontSize: 12
+    fontSize: '10rem'
   },
   'text--large': {
-    fontSize: 14
+    fontSize: '11rem'
   },
   'text--xl': {
-    fontSize: 16
+    fontSize: '13rem'
   },
   'text--xxl': {
-    fontSize: 18
+    fontSize: '14rem'
   },
   'text--3xl': {
-    fontSize: 20
+    fontSize: '16rem'
   },
   'text--giant': {
-    fontSize: 45
+    fontSize: '37rem'
   },
   'text--left': {
     textAlign: 'left'

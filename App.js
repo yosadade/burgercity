@@ -15,6 +15,11 @@ import LoginScreen from './src/screens/LoginScreen'
 import ForgotPasswordScreen from './src/screens/ForgotPassword'
 import SignupScreen from './src/screens/SignupScreen'
 
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+import reducers from './src/redux/reducer'
+
 import HomeScreen from './src/screens/HomeScreen'
 import FavouritesScreen from './src/screens/FavouritesScreen'
 import OurBurgerScreen from './src/screens/OurBurgerScreen'
@@ -39,6 +44,8 @@ import WalletIconActive from './src/assets/icons/wallet-icon-active.svg'
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
+const store = createStore(reducers)
+
 const App = () => {
   YellowBox.ignoreWarnings(['FlatList: Calling `getNode()`'])
   const { width } = Dimensions.get('window')
@@ -46,39 +53,42 @@ const App = () => {
     $rem: width / 320
   })
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName='HomeTab'
-        screenOptions={{
-          headerShown: false,
-          ...TransitionPresets.SlideFromRightIOS
-        }}>
-        <Stack.Screen
-          name='OnBoardingScreen'
-          component={OnBoardingScreen}
-        />
-        <Stack.Screen
-          name='LoginScreen'
-          component={LoginScreen}
-        />
-        <Stack.Screen
-          name='ForgotPasswordScreen'
-          component={ForgotPasswordScreen}
-        />
-        <Stack.Screen
-          name='SignupScreen'
-          component={SignupScreen}
-        />
-        <Stack.Screen
-          name='HomeTab'
-          component={HomeTab}
-        />
-        <Stack.Screen
-          name='FavouritesScreen'
-          component={FavouritesScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName='HomeTab'
+          screenOptions={{
+            headerShown: false,
+            ...TransitionPresets.SlideFromRightIOS
+          }}>
+          <Stack.Screen
+            name='OnBoardingScreen'
+            component={OnBoardingScreen}
+          />
+          <Stack.Screen
+            name='LoginScreen'
+            component={LoginScreen}
+          />
+          <Stack.Screen
+            name='ForgotPasswordScreen'
+            component={ForgotPasswordScreen}
+          />
+          <Stack.Screen
+            name='SignupScreen'
+            component={SignupScreen}
+          />
+          <Stack.Screen
+            name='HomeTab'
+            component={HomeTab}
+          />
+          <Stack.Screen
+            name='FavouritesScreen'
+            component={FavouritesScreen}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+
+    </Provider>
   )
 }
 

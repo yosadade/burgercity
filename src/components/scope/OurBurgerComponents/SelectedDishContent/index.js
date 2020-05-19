@@ -115,8 +115,6 @@ const styles = EStyleSheet.create({
     padding: '16rem'
   },
   lead: {
-    paddingHorizontal: '16rem',
-    paddingTop: '20rem'
   },
   lead__hero: {
     marginTop: '40rem'
