@@ -1,12 +1,44 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import PropTypes from 'prop-types'
+import { View, StatusBar, StyleSheet } from 'react-native'
+import Header from '../../components/global/Header'
 
-export default class TrackOrdersScreen extends Component {
+class TrackOrdersScreen extends Component {
   render () {
     return (
-      <View>
-        <Text> TrackOrdersScreen </Text>
+      <View style={styles['container']}>
+        {this.renderStatusBar()}
+        {this.renderHeader()}
       </View>
     )
   }
+
+  renderStatusBar = () => {
+    return (
+      <StatusBar
+        animated
+        translucent
+        barStyle="dark-content"
+        backgroundColor="#FFFFFF"
+      />
+    )
+  }
+
+  renderHeader = () => {
+    return (
+      <Header
+        onPressRightButton={() => this.props.navigation.navigate('TrolleyScreen')}
+      />
+    )
+  }
 }
+
+TrackOrdersScreen.propTypes = {
+  navigation: PropTypes.object
+}
+
+export default TrackOrdersScreen
+
+const styles = StyleSheet.create({
+  flex: 1
+})

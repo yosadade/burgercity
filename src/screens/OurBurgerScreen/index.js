@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { View, Dimensions, Text, StatusBar } from 'react-native'
 import Carousel from 'react-native-snap-carousel'
 import EStyleSheet from 'react-native-extended-stylesheet'
@@ -51,6 +52,7 @@ class OurBurgerScreen extends Component {
       <Header
         withBack={withBack}
         onPressLeftButton={() => this.content.snapToPrev()}
+        onPressRightButton={() => this.props.navigation.navigate('TrolleyScreen')}
       />
     )
   }
@@ -154,6 +156,10 @@ class OurBurgerScreen extends Component {
         )
     }
   }
+}
+
+OurBurgerScreen.propTypes = {
+  navigation: PropTypes.object
 }
 
 export default OurBurgerScreen

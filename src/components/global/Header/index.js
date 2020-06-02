@@ -21,16 +21,10 @@ const Header = (props) => {
         />
       </View>
 
-      <TouchableOpacity
-        onPress={() => {}}
-        style={styles['btn']}
-      >
-        <FontAwesome
-          name='shopping-cart'
-          color='#ff9f1c'
-          size={20}
-        />
-      </TouchableOpacity>
+      <RightButton
+        onPressRightButton={props.onPressRightButton}
+      />
+
     </View>
   )
 }
@@ -62,7 +56,7 @@ const LeftButton = ({ withBack, onPressLeftButton }) => {
   }
   return (
     <TouchableOpacity
-      onPress={onPressLeftButton}
+      onPress={(onPressLeftButton)}
       style={styles['btn']}
     >
       {button}
@@ -70,14 +64,34 @@ const LeftButton = ({ withBack, onPressLeftButton }) => {
   )
 }
 
+const RightButton = ({ onPressRightButton }) => {
+  return (
+    <TouchableOpacity
+      onPress={onPressRightButton}
+      style={styles['btn']}
+    >
+      <FontAwesome
+        name='shopping-cart'
+        color='#ff9f1c'
+        size={20}
+      />
+    </TouchableOpacity>
+  )
+}
+
 Header.propTypes = {
   withBack: PropTypes.bool,
-  onPressLeftButton: PropTypes.func
+  onPressLeftButton: PropTypes.func,
+  onPressRightButton: PropTypes.func
 }
 
 LeftButton.propTypes = {
   withBack: PropTypes.bool,
   onPressLeftButton: PropTypes.func
+}
+
+RightButton.propTypes = {
+  onPressRightButton: PropTypes.func
 }
 
 export default Header

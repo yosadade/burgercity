@@ -7,7 +7,8 @@ import {
   Dimensions,
   ImageBackground,
   FlatList,
-  ScrollView
+  ScrollView,
+  TouchableOpacity
 }
   from 'react-native'
 import PropTypes from 'prop-types'
@@ -72,7 +73,7 @@ class HomeScreen extends Component {
 
   renderHeader = () => {
     return (
-      <Header />
+      <Header onPressRightButton={() => this.props.navigation.navigate('TrolleyScreen')} onPress={() => {}}/>
     )
   }
 
@@ -188,8 +189,13 @@ class HomeScreen extends Component {
   }
 
   renderBestOfferItem = ({ item }) => {
+    const { navigation } = this.props
     return (
-      <View>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('BestOfferFoodScreen ')
+        }}
+      >
         <Image
           source={item.image}
           resizeMode='contain'
@@ -213,7 +219,7 @@ class HomeScreen extends Component {
           emptyStarColor='#cecece'
           containerStyle={styles['home__best-offer__rate']}
         />
-      </View>
+      </TouchableOpacity>
     )
   }
 }
@@ -228,7 +234,8 @@ const mapDispatchToProps = dispatch => (
 )
 
 HomeScreen.propTypes = {
-  banners: PropTypes.array
+  banners: PropTypes.array,
+  navigation: PropTypes.object
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)

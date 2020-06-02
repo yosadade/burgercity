@@ -43,6 +43,7 @@ class WalletScreen extends Component {
       <Header
         withBack={withBack}
         onPressLeftButton={() => this.content.snapToPrev()}
+        onPressRightButton={() => this.props.navigation.navigate('TrolleyScreen')}
       />
     )
   }

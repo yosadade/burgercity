@@ -14,6 +14,8 @@ import OnBoardingScreen from './src/screens/OnBoardingScreen'
 import LoginScreen from './src/screens/LoginScreen'
 import ForgotPasswordScreen from './src/screens/ForgotPassword'
 import SignupScreen from './src/screens/SignupScreen'
+import TrolleyScreen from './src/screens/TrolleyScreen'
+import BestOfferFoodScreen from './src/screens/BestOfferFoodScreen'
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
@@ -84,6 +86,14 @@ const App = () => {
           <Stack.Screen
             name='FavouritesScreen'
             component={FavouritesScreen}
+          />
+          <Stack.Screen
+            name='TrolleyScreen'
+            component={TrolleyScreen}
+          />
+          <Stack.Screen
+            name='BestOfferFoodScreen '
+            component={BestOfferFoodScreen }
           />
         </Stack.Navigator>
       </NavigationContainer>
