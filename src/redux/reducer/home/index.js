@@ -58,7 +58,8 @@ const INITIAL_STATE = {
       rating: 4,
       imageUrl: 'https://live.staticflickr.com/7438/16320962599_3c11e39b77_z.jpg'
     }
-  ]
+  ],
+  trolleyList: []
 }
 
 const home = (state = INITIAL_STATE, action) => {

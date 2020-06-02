@@ -136,6 +136,7 @@ class BestOfferFoodScreen extends Component {
 
   renderFooterSection = () => {
     const { countNumber } = this.state
+    const { navigation } = this.props
     return (
       <View style={styles['footer']}>
         <Text
@@ -158,6 +159,7 @@ class BestOfferFoodScreen extends Component {
 
         <TouchableOpacity
           style={styles['add-to-cart']}
+          onPress={() => navigation.navigate('TrolleyScreen')}
         >
           <FontAwesome
             name='shopping-cart'
